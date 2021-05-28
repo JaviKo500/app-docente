@@ -1,0 +1,42 @@
+<div class=" altura d-flex justify-content-center align-items-start">
+    <form class="w-50 row g-3 needs-validation" novalidate>
+        <div class="col-12" style="height: 150px;">
+
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Nombres:</label>
+          <input type="text" class="form-control"  required>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Apellidos</label>
+          <input type="text" class="form-control"  required>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">CI</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Email</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <input type="email" class="form-control"  required>
+            </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">Cargo</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Seleccionar...</option>
+            <option *ngFor="let cargo of cargoDocente">{{cargo}}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationCustom05" required>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+</div>
