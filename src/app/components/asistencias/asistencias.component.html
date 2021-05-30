@@ -1,0 +1,31 @@
+
+  <div class="m-1 d-flex justify-content-start">
+      <button type="button" class="btn btn-dark cursor" data-bs-toggle="tooltip" data-bs-placement="top" title="Regresar" routerLink = "/">
+        <span aria-hidden="true">&laquo;</span> 
+      </button>
+    </div>
+  <div class="scroll m-1" id="contenedor">
+    <div class="row">
+      <div class="col-12" *ngIf="indexedDBService.asistenciaDocente">
+        <strong>CI Docente:</strong> {{ indexedDBService.asistenciaDocente.docenteCedula }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+          <table class="table" *ngIf="indexedDBService.asistenciaDocente">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let fecha of indexedDBService.asistenciaDocente.fechas.reverse(); index as i ">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{fecha | date: 'MMM d, y, h:mm:ss a'}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>

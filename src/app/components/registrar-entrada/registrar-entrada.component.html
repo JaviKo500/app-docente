@@ -6,7 +6,7 @@
         <div class="col-12">
             <div class="d-flex justify-content-center">
                 <div class="clock">
-                    <p>{{dia | uppercase}} {{fecha | uppercase}}</p>
+                    <p>{{dia | uppercase}} {{fecha1 | uppercase}}</p>
                     <div class="hours">
                         <div class="horas">
                             <span class="mishoras">{{hora}}:{{minutos}}:{{segundos}}</span>
@@ -21,14 +21,19 @@
             <h4>Registrar Asitencia</h4>
         </div>
         <div class="col-12">
-            <form action="" class="row" >
+            <form action="" class="row" [formGroup]="formAsistencia" (ngSubmit)="agregarAsistencia()">
                 <div class="col-8">
                     <label for="validationCustom01" class="form-label">Identificación:</label>
-                    <input type="text" class="form-control" placeholder="010......" autocomplete="off" required>
+                    <input type="text" class="form-control" placeholder="010......" autocomplete="off" formControlName="docenteCedula">
                 </div>
                 <div class="col-4 d-flex align-items-end">
-                    <button class="btn btn-primary" type="button">Registrar Entrada</button>
+                    <button class="btn btn-primary" type="submit">Registrar Entrada</button>
                 </div>
+                <div class="col-md-12 mt-1" *ngIf="mensajeError">
+                    <div class="alert alert-danger" role="alert">
+                      {{mensajeError}}
+                    </div>
+                  </div>
                 <div class="col-12 mt-1">
                     <a class="btn btn-light" routerLink="/registrar">primera vez?</a>
                 </div>
